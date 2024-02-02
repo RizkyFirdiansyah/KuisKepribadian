@@ -66,7 +66,7 @@ const questions = [
 // Endpoint untuk mendapatkan pertanyaan kuis
 app.get('/api/quiz', (req, res) => {
     res.json(questions);
-    // console.log(questions);
+    console.log(questions);
 });
 
 
