@@ -1,10 +1,12 @@
+require('dotenv').config(); // Load environment variables from .env file
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -108,5 +110,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Menjalankan server pada port tertentu
 app.listen(PORT, () => {
-    console.log(`Server Express berjalan di http://localhost:${PORT}`);
+    console.log(`Server Express berjalan di http://localhost:${PORT} pada mode ${NODE_ENV}`);
 });
