@@ -82,7 +82,7 @@
           <div id="modal" class="modal">
             <div class="modal-hasil">
               <p id="result"></p>
-              <a href="index.html">Keluar</a>
+              <button onclick="closeKuis()">Kembali</button>
               <button onclick="saveResult()">Simpan Hasil</button>
             </div>
           </div>
@@ -266,6 +266,10 @@
 
         // Hapus objek URL
         URL.revokeObjectURL(url);
+      }
+
+      function closeKuis() {
+        window.location.href = "index.html";
       }
 
       function saveResult() {
