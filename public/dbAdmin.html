@@ -115,11 +115,7 @@
             document.getElementById('extrovert-count').textContent = data.personalityData.Extrovert;
             document.getElementById('ambivert-count').textContent = data.personalityData.Ambivert;
 
-            // Add a download button for CSV
-            const downloadTXTButton = document.getElementById('download-txt');
-            downloadTXTButton.addEventListener('click', () => {
-              downloadTXT(data.personalityData, data.totalUsers);
-            });
+
           })
           .catch(error => console.error('Error fetching stats:', error));
       });
@@ -146,6 +142,12 @@
         link.click();
         document.body.removeChild(link);
       }
+
+      // Add a download button for CSV
+      const downloadTXTButton = document.getElementById('download-txt');
+      downloadTXTButton.addEventListener('click', () => {
+        downloadTXT(data.personalityData, data.totalUsers);
+      });
     </script>
 
     <script src="assets/js/script.js"></script>
